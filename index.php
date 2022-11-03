@@ -3,7 +3,7 @@
 
     function getDB(){
 
-        $sql = "SELECT one.id, one.name, one.lastname, two.poste FROM table1 one SELF JOIN table2 two On one.id_info = two.id ORDER BY two.poste DESC";
+        $sql = "SELECT one.id, one.name, one.lastname, two.poste FROM table1 one CROSS JOIN table2 two On one.id_info = two.id ORDER BY two.poste DESC";
         $result = connect() -> query($sql);
         if(!$result)
             echo "No data to show";
